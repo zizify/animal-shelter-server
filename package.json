@@ -1,0 +1,24 @@
+{
+  "name": "animal-shelter-server",
+  "version": "1.0.0",
+  "description": "Animal shelter backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Andy Gaines",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "json-parser": "^1.1.5",
+    "knex": "^0.13.0",
+    "mongoose": "^4.11.12",
+    "morgan": "^1.8.2",
+    "pg": "^7.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "nyc": "^11.2.1"
+  }
+}

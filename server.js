@@ -1,7 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const parser = require('json-parser');
-
+const {CLIENT_ORIGIN} = require('./config');
 const cats = [
 	{
 		imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
@@ -79,6 +80,18 @@ const dogs = [
 	},
 ];
 
+// app.use(
+// 	morgan(process.env.NODE_ENV === 'production' ? 'common' : 'dev', {
+// 		skip: (req, res) => process.env.NODE_ENV === 'test'
+// 	})
+// );
+
+app.use(
+	cors({
+	  origin: CLIENT_ORIGIN
+	})
+);
+
 app.get('/api/cat', (req, res) => res.json(cats[0]));
 
 app.get('/api/dog', (req, res) => res.json(dogs[0]));
@@ -90,4 +103,4 @@ app.delete('/api/cat'), (req, res) => {
 	res.status(204).end();
 };
 
-app.listen(3000, () => console.log('App listening on port 3000')); 
+app.listen(8080, () => console.log('App listening on port 8080')); 

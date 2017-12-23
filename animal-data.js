@@ -136,7 +136,4 @@ dogs.enqueue({
 	story: 'Became so insufferable that his family kicked him out.'
 });
 
-console.log(cats.peek());
-dogs.display();
-
 module.exports = {cats, dogs};

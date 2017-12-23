@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const parser = require('json-parser');
-const {CLIENT_ORIGIN} = require('./config');
+const {PORT, CLIENT_ORIGIN} = require('./config');
 const {cats, dogs} = require('./animal-data.js');
 
 app.use(
@@ -25,4 +25,4 @@ app.delete('/api/dog', (req, res) => {
 	res.status(204).end();
 });
 
-app.listen(8080, () => console.log('App listening on port 8080')); 
+app.listen(PORT || 8080, () => console.log('App listening on port 8080')); 
